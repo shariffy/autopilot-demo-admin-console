@@ -1,0 +1,66 @@
+[
+  {
+    "id": "u-1001",
+    "name": "Ada Lovelace",
+    "email": "ada.lovelace@example.com",
+    "role": "Administrator",
+    "status": "active",
+    "createdAt": "2024-01-12"
+  },
+  {
+    "id": "u-1002",
+    "name": "Grace Hopper",
+    "email": "grace.hopper@example.com",
+    "role": "Support",
+    "status": "active",
+    "createdAt": "2024-02-03"
+  },
+  {
+    "id": "u-1003",
+    "name": "Alan Turing",
+    "email": "alan.turing@example.com",
+    "role": "Engineer",
+    "status": "invited",
+    "createdAt": "2024-03-19"
+  },
+  {
+    "id": "u-1004",
+    "name": "Katherine Johnson",
+    "email": "katherine.johnson@example.com",
+    "role": "Analyst",
+    "status": "active",
+    "createdAt": "2024-04-27"
+  },
+  {
+    "id": "u-1005",
+    "name": "Linus Torvalds",
+    "email": "linus.torvalds@example.com",
+    "role": "Engineer",
+    "status": "suspended",
+    "createdAt": "2024-05-08"
+  },
+  {
+    "id": "u-1006",
+    "name": "Radia Perlman",
+    "email": "radia.perlman@example.com",
+    "role": "Engineer",
+    "status": "active",
+    "createdAt": "2024-06-15"
+  },
+  {
+    "id": "u-1007",
+    "name": "Margaret Hamilton",
+    "email": "margaret.hamilton@example.com",
+    "role": "Manager",
+    "status": "active",
+    "createdAt": "2024-07-21"
+  },
+  {
+    "id": "u-1008",
+    "name": "Dennis Ritchie",
+    "email": "dennis.ritchie@example.com",
+    "role": "Support",
+    "status": "invited",
+    "createdAt": "2024-08-30"
+  }
+]

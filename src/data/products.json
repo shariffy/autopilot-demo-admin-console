@@ -1,0 +1,74 @@
+[
+  {
+    "id": "p-2001",
+    "name": "Standard Plan",
+    "sku": "PLAN-STD",
+    "category": "Subscription",
+    "price": 19.0,
+    "status": "active",
+    "createdAt": "2024-01-05"
+  },
+  {
+    "id": "p-2002",
+    "name": "Pro Plan",
+    "sku": "PLAN-PRO",
+    "category": "Subscription",
+    "price": 49.0,
+    "status": "active",
+    "createdAt": "2024-01-05"
+  },
+  {
+    "id": "p-2003",
+    "name": "Enterprise Plan",
+    "sku": "PLAN-ENT",
+    "category": "Subscription",
+    "price": 199.0,
+    "status": "active",
+    "createdAt": "2024-02-11"
+  },
+  {
+    "id": "p-2004",
+    "name": "Onboarding Session",
+    "sku": "SVC-ONB",
+    "category": "Service",
+    "price": 250.0,
+    "status": "active",
+    "createdAt": "2024-03-02"
+  },
+  {
+    "id": "p-2005",
+    "name": "Priority Support Add-on",
+    "sku": "ADD-SUP",
+    "category": "Add-on",
+    "price": 39.0,
+    "status": "draft",
+    "createdAt": "2024-04-18"
+  },
+  {
+    "id": "p-2006",
+    "name": "Legacy Starter Plan",
+    "sku": "PLAN-LEG",
+    "category": "Subscription",
+    "price": 9.0,
+    "status": "archived",
+    "createdAt": "2023-09-14"
+  },
+  {
+    "id": "p-2007",
+    "name": "Extra Storage 100GB",
+    "sku": "ADD-STO",
+    "category": "Add-on",
+    "price": 12.0,
+    "status": "active",
+    "createdAt": "2024-05-22"
+  },
+  {
+    "id": "p-2008",
+    "name": "Custom Integration",
+    "sku": "SVC-INT",
+    "category": "Service",
+    "price": 1500.0,
+    "status": "draft",
+    "createdAt": "2024-06-09"
+  }
+]
