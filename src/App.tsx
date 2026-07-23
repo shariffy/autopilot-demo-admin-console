@@ -3,6 +3,8 @@ import { Layout } from './components/Layout'
 import { HomePage } from './pages/HomePage'
 import { UsersPage } from './pages/UsersPage'
 import { UserDetailPage } from './pages/UserDetailPage'
+import { ProductsPage } from './pages/ProductsPage'
+import { ProductDetailPage } from './pages/ProductDetailPage'
 
 export default function App() {
   return (
@@ -12,6 +14,8 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="users" element={<UsersPage />} />
           <Route path="users/:id" element={<UserDetailPage />} />
+          <Route path="products" element={<ProductsPage />} />
+          <Route path="products/:id" element={<ProductDetailPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
