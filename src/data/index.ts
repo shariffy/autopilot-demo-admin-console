@@ -1,11 +1,13 @@
 import usersRaw from './users.json'
 import productsRaw from './products.json'
-import type { Product, User } from '../types'
+import categoriesRaw from './categories.json'
+import type { Category, Product, User } from '../types'
 
 // Fixtures are the current data source. The UI depends only on the functions
 // below, so replacing these with a real API later is a change in this file.
 const users = usersRaw as unknown as User[]
 const products = productsRaw as unknown as Product[]
+const categories = categoriesRaw as unknown as Category[]
 
 function matches(haystack: string, query: string): boolean {
   return haystack.toLowerCase().includes(query.toLowerCase())
@@ -41,4 +43,10 @@ export function getProducts(query = ''): Product[] {
 
 export function getProductById(id: string): Product | undefined {
   return products.find((product) => product.id === id)
+}
+
+// The category catalogue itself. NOT every product's `categoryId` resolves
+// against it — see the note on `Category` in `../types`.
+export function getCategories(): Category[] {
+  return categories
 }

@@ -4,6 +4,7 @@
     "name": "Standard Plan",
     "sku": "PLAN-STD",
     "category": "Subscription",
+    "categoryId": "cat-subscription",
     "price": 19.0,
     "status": "active",
     "createdAt": "2024-01-05"
@@ -13,6 +14,7 @@
     "name": "Pro Plan",
     "sku": "PLAN-PRO",
     "category": "Subscription",
+    "categoryId": "cat-subscription",
     "price": 49.0,
     "status": "active",
     "createdAt": "2024-01-05"
@@ -22,6 +24,7 @@
     "name": "Enterprise Plan",
     "sku": "PLAN-ENT",
     "category": "Subscription",
+    "categoryId": "cat-subscription",
     "price": 199.0,
     "status": "active",
     "createdAt": "2024-02-11"
@@ -31,6 +34,7 @@
     "name": "Onboarding Session",
     "sku": "SVC-ONB",
     "category": "Service",
+    "categoryId": "cat-service",
     "price": 250.0,
     "status": "active",
     "createdAt": "2024-03-02"
@@ -40,6 +44,7 @@
     "name": "Priority Support Add-on",
     "sku": "ADD-SUP",
     "category": "Add-on",
+    "categoryId": "cat-addon",
     "price": 39.0,
     "status": "draft",
     "createdAt": "2024-04-18"
@@ -49,6 +54,7 @@
     "name": "Legacy Starter Plan",
     "sku": "PLAN-LEG",
     "category": "Subscription",
+    "categoryId": "cat-subscription",
     "price": 9.0,
     "status": "archived",
     "createdAt": "2023-09-14"
@@ -58,6 +64,7 @@
     "name": "Extra Storage 100GB",
     "sku": "ADD-STO",
     "category": "Add-on",
+    "categoryId": "cat-addon",
     "price": 12.0,
     "status": "active",
     "createdAt": "2024-05-22"
@@ -67,6 +74,7 @@
     "name": "Custom Integration",
     "sku": "SVC-INT",
     "category": "Service",
+    "categoryId": "cat-integration",
     "price": 1500.0,
     "status": "draft",
     "createdAt": "2024-06-09"

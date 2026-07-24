@@ -1,0 +1,5 @@
+[
+  { "id": "cat-subscription", "label": "Subscription" },
+  { "id": "cat-service", "label": "Service" },
+  { "id": "cat-addon", "label": "Add-on" }
+]
