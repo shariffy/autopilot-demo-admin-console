@@ -1,5 +1,6 @@
 import { Link, useSearchParams } from 'react-router-dom'
 import { getProducts } from '../data'
+import { CategoryLabel } from '../components/CategoryLabel'
 import { SearchBar } from '../components/SearchBar'
 import { StatusBadge } from '../components/StatusBadge'
 import { SortableHeader } from '../components/SortableHeader'
@@ -103,7 +104,12 @@ export function ProductsPage() {
                 <Link to={`/products/${product.id}`}>{product.name}</Link>
               </td>
               <td>{product.sku}</td>
-              <td>{product.category}</td>
+              <td>
+                <CategoryLabel
+                  categoryId={product.categoryId}
+                  fallback={product.category}
+                />
+              </td>
               <td>{priceFormatter.format(product.price)}</td>
               <td>
                 <StatusBadge status={product.status} />
