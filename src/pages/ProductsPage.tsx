@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from 'react-router-dom'
-import { getProducts } from '../data'
+import { getCategories, getProducts } from '../data'
 import { SearchBar } from '../components/SearchBar'
 import { StatusBadge } from '../components/StatusBadge'
 import { SortableHeader } from '../components/SortableHeader'
@@ -37,6 +37,7 @@ export function ProductsPage() {
 
   const filtered = getProducts(query)
   const products = sortProducts(filtered, sortKey, sortDir)
+  const categories = getCategories()
 
   const setQuery = (value: string) => {
     const next = new URLSearchParams(params)
@@ -103,7 +104,9 @@ export function ProductsPage() {
                 <Link to={`/products/${product.id}`}>{product.name}</Link>
               </td>
               <td>{product.sku}</td>
-              <td>{product.category}</td>
+              <td>
+                {categories.find((c) => c.id === product.categoryId)!.label}
+              </td>
               <td>{priceFormatter.format(product.price)}</td>
               <td>
                 <StatusBadge status={product.status} />
