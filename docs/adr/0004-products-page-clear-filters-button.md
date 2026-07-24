@@ -1,4 +1,4 @@
-# 3. Products page: "Clear filters" button in the toolbar
+# 4. Products page: "Clear filters" button in the toolbar
 
 Date: 2026-07-24
 

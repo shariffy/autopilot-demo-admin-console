@@ -1,4 +1,4 @@
-# 2. Safe category-label lookup with free-text fallback
+# 3. Safe category-label lookup with free-text fallback
 
 Date: 2026-07-24
 
