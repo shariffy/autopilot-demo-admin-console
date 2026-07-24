@@ -1,0 +1,113 @@
+/* Design system: shared styling for every primitive in this directory.
+   Co-located and imported by each component file (`import './styles.css'`);
+   Vite dedups the repeated import, so this loads once regardless of how many
+   primitives a page pulls in. Plain CSS classes rather than inline styles —
+   the primitives ARE where styling is allowed to live; callers only pass
+   props. */
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.ds-button-primary {
+  background: #2456c7;
+  color: #fff;
+}
+
+.ds-button-primary:hover {
+  background: #1d46a3;
+}
+
+.ds-button-secondary {
+  background: #fff;
+  color: #1f2430;
+  border-color: #cfd4dc;
+}
+
+.ds-button-secondary:hover {
+  background: #f5f6f8;
+}
+
+.ds-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ds-input {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #cfd4dc;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.95rem;
+  min-width: 220px;
+}
+
+.ds-input:focus {
+  outline: 2px solid #2456c7;
+  outline-offset: 1px;
+}
+
+.ds-card {
+  background: #fff;
+  border: 1px solid #e2e5ea;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+.ds-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.ds-card-title {
+  margin: 0;
+}
+
+.ds-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ds-badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  background: #eceef2;
+  color: #4b5563;
+}
+
+.ds-badge-success {
+  background: #e3f6ea;
+  color: #1c7a43;
+}
+
+.ds-badge-warning {
+  background: #fff3d6;
+  color: #8a6100;
+}
+
+.ds-badge-danger {
+  background: #fbe1e1;
+  color: #a12626;
+}
+
+.ds-badge-neutral {
+  background: #eceef2;
+  color: #4b5563;
+}
