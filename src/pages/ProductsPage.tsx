@@ -1,9 +1,9 @@
 import { Link, useSearchParams } from 'react-router-dom'
 import { getProducts } from '../data'
 import { CategoryLabel } from '../components/CategoryLabel'
-import { SearchBar } from '../components/SearchBar'
 import { StatusBadge } from '../components/StatusBadge'
 import { SortableHeader } from '../components/SortableHeader'
+import { Card, TextInput } from '../design-system'
 import type { Product } from '../types'
 
 const priceFormatter = new Intl.NumberFormat('en-US', {
@@ -61,16 +61,18 @@ export function ProductsPage() {
   }
 
   return (
-    <section className="panel">
-      <div className="panel-head">
-        <h2>Products</h2>
-        <SearchBar
+    <Card
+      title="Products"
+      actions={
+        <TextInput
+          type="search"
           value={query}
-          onChange={setQuery}
+          onChange={(event) => setQuery(event.target.value)}
           placeholder="Search products…"
+          aria-label="Search products"
         />
-      </div>
-
+      }
+    >
       <p className="result-count">
         {products.length} {products.length === 1 ? 'product' : 'products'}
       </p>
@@ -125,6 +127,6 @@ export function ProductsPage() {
           )}
         </tbody>
       </table>
-    </section>
+    </Card>
   )
 }
