@@ -3,7 +3,7 @@ import { getProducts } from '../data'
 import { CategoryLabel } from '../components/CategoryLabel'
 import { StatusBadge } from '../components/StatusBadge'
 import { SortableHeader } from '../components/SortableHeader'
-import { Card, TextInput } from '../design-system'
+import { Button, Card, TextInput } from '../design-system'
 import type { Product } from '../types'
 
 const priceFormatter = new Intl.NumberFormat('en-US', {
@@ -36,6 +36,8 @@ export function ProductsPage() {
     rawSort === 'name' || rawSort === 'price' ? rawSort : null
   const sortDir: SortDir = params.get('dir') === 'desc' ? 'desc' : 'asc'
 
+  const isFiltered = query !== '' || sortKey !== null
+
   const filtered = getProducts(query)
   const products = sortProducts(filtered, sortKey, sortDir)
 
@@ -60,17 +62,28 @@ export function ProductsPage() {
     setParams(next)
   }
 
+  const clearFilters = () => {
+    setParams(new URLSearchParams())
+  }
+
   return (
     <Card
       title="Products"
       actions={
-        <TextInput
-          type="search"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder="Search products…"
-          aria-label="Search products"
-        />
+        <>
+          <TextInput
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search products…"
+            aria-label="Search products"
+          />
+          {isFiltered && (
+            <Button variant="secondary" onClick={clearFilters}>
+              Clear filters
+            </Button>
+          )}
+        </>
       }
     >
       <p className="result-count">
