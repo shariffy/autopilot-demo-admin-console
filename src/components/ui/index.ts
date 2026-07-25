@@ -25,3 +25,6 @@ export {
   TableCell,
 } from './Table'
 export type { TableRowProps } from './Table'
+
+export { SortableHeaderCell } from './SortableHeaderCell'
+export type { SortableHeaderCellProps, SortDirection } from './SortableHeaderCell'

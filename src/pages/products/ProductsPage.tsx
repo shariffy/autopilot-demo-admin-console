@@ -12,11 +12,14 @@ import {
   TableRow,
   TableHeaderCell,
   TableCell,
+  SortableHeaderCell,
 } from '../../components/ui'
-import type { BadgeVariant } from '../../components/ui'
+import type { BadgeVariant, SortDirection } from '../../components/ui'
 import { products } from '../../data/products'
 import type { ProductStatus } from '../../types'
 import styles from './ProductsPage.module.css'
+
+type SortColumn = 'name' | 'price'
 
 function statusVariant(status: ProductStatus): BadgeVariant {
   switch (status) {
@@ -37,6 +40,8 @@ function formatPrice(price: number): string {
 
 export default function ProductsPage() {
   const [query, setQuery] = useState('')
+  const [sortColumn, setSortColumn] = useState<SortColumn | null>(null)
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc')
   const navigate = useNavigate()
 
   const q = query.trim().toLowerCase()
@@ -49,6 +54,39 @@ export default function ProductsPage() {
           p.status.toLowerCase().includes(q),
       )
     : products
+
+  // Apply sort after filtering; spread to avoid mutating the fixture array.
+  const sorted = sortColumn
+    ? [...filtered].sort((a, b) => {
+        if (sortColumn === 'name') {
+          const cmp = a.name.localeCompare(b.name)
+          return sortDirection === 'asc' ? cmp : -cmp
+        }
+        // sortColumn === 'price'
+        const cmp = a.price - b.price
+        return sortDirection === 'asc' ? cmp : -cmp
+      })
+    : filtered
+
+  function handleSort(column: SortColumn) {
+    if (sortColumn === column) {
+      // Second click on the same column: flip direction.
+      // Third click (desc → next): clear sort back to fixture order.
+      if (sortDirection === 'asc') {
+        setSortDirection('desc')
+      } else {
+        setSortColumn(null)
+        setSortDirection('asc')
+      }
+    } else {
+      setSortColumn(column)
+      setSortDirection('asc')
+    }
+  }
+
+  function directionFor(column: SortColumn): SortDirection {
+    return sortColumn === column ? sortDirection : null
+  }
 
   return (
     <Box>
@@ -72,16 +110,26 @@ export default function ProductsPage() {
           <Table>
             <TableHead>
               <TableRow>
-                <TableHeaderCell>Name</TableHeaderCell>
+                <SortableHeaderCell
+                  direction={directionFor('name')}
+                  onSort={() => handleSort('name')}
+                >
+                  Name
+                </SortableHeaderCell>
                 <TableHeaderCell>SKU</TableHeaderCell>
                 <TableHeaderCell>Category</TableHeaderCell>
-                <TableHeaderCell>Price</TableHeaderCell>
+                <SortableHeaderCell
+                  direction={directionFor('price')}
+                  onSort={() => handleSort('price')}
+                >
+                  Price
+                </SortableHeaderCell>
                 <TableHeaderCell>Status</TableHeaderCell>
                 <TableHeaderCell>Created</TableHeaderCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {filtered.map((product) => (
+              {sorted.map((product) => (
                 <TableRow
                   key={product.id}
                   onClick={() => navigate(`/products/${product.id}`)}

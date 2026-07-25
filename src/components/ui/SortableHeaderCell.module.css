@@ -1,0 +1,57 @@
+/* The th itself has no padding — the button fills it so the whole cell is clickable */
+.th {
+  padding: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  line-height: inherit;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.button:hover {
+  color: var(--color-text-primary);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Indicator: subtle when idle, full opacity when active or hovered */
+.indicator {
+  font-size: var(--font-size-xs);
+  opacity: 0.35;
+  line-height: 1;
+  transition: opacity 0.1s ease;
+}
+
+.button:hover .indicator {
+  opacity: 0.75;
+}
+
+.active .indicator {
+  opacity: 1;
+}
+
+/* Active column label also gets the primary text colour */
+.active {
+  color: var(--color-text-primary);
+}
