@@ -16,6 +16,7 @@ import {
 } from '../../components/ui'
 import type { BadgeVariant, SortDirection } from '../../components/ui'
 import { products } from '../../data/products'
+import { vendors } from '../../data/vendors'
 import type { ProductStatus } from '../../types'
 import styles from './ProductsPage.module.css'
 
@@ -36,6 +37,17 @@ function formatPrice(price: number): string {
     currency: 'USD',
     minimumFractionDigits: 2,
   }).format(price)
+}
+
+/**
+ * Safely resolves a vendorId against the vendor catalogue.
+ * When the id has no matching entry (catalogue and product data can diverge),
+ * renders a neutral Badge rather than accessing .name on undefined and throwing.
+ */
+function VendorCell({ vendorId }: { vendorId: string }) {
+  const vendor = vendors.find((v) => v.id === vendorId)
+  if (vendor) return <>{vendor.name}</>
+  return <Badge variant="neutral">Unknown vendor</Badge>
 }
 
 export default function ProductsPage() {
@@ -118,6 +130,7 @@ export default function ProductsPage() {
                 </SortableHeaderCell>
                 <TableHeaderCell>SKU</TableHeaderCell>
                 <TableHeaderCell>Category</TableHeaderCell>
+                <TableHeaderCell>Vendor</TableHeaderCell>
                 <SortableHeaderCell
                   direction={directionFor('price')}
                   onSort={() => handleSort('price')}
@@ -140,6 +153,9 @@ export default function ProductsPage() {
                     <code className={styles.sku}>{product.sku}</code>
                   </TableCell>
                   <TableCell>{product.category}</TableCell>
+                  <TableCell>
+                    <VendorCell vendorId={product.vendorId} />
+                  </TableCell>
                   <TableCell>{formatPrice(product.price)}</TableCell>
                   <TableCell>
                     <Badge variant={statusVariant(product.status)}>
