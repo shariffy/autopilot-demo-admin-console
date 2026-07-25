@@ -4,6 +4,7 @@ import { Box } from '../../design-system'
 import {
   PageHeader,
   SearchInput,
+  Button,
   Card,
   Badge,
   Table,
@@ -100,6 +101,16 @@ export default function ProductsPage() {
     return sortColumn === column ? sortDirection : null
   }
 
+  // True whenever at least one filter (search text or column sort) is active.
+  const hasActiveFilters = query !== '' || sortColumn !== null
+
+  // Resets search text and sort state in a single action.
+  function handleClearFilters() {
+    setQuery('')
+    setSortColumn(null)
+    setSortDirection('asc')
+  }
+
   return (
     <Box>
       <PageHeader
@@ -113,6 +124,11 @@ export default function ProductsPage() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by name, SKU, category, or status…"
         />
+        {hasActiveFilters && (
+          <Button variant="ghost" size="sm" onClick={handleClearFilters}>
+            Clear filters
+          </Button>
+        )}
       </Box>
 
       <Card padding={false}>
