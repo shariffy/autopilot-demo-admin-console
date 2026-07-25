@@ -16,6 +16,7 @@ import {
 } from '../../components/ui'
 import type { BadgeVariant, SortDirection } from '../../components/ui'
 import { products } from '../../data/products'
+import { vendors } from '../../data/vendors'
 import type { ProductStatus } from '../../types'
 import styles from './ProductsPage.module.css'
 
@@ -118,6 +119,7 @@ export default function ProductsPage() {
                 </SortableHeaderCell>
                 <TableHeaderCell>SKU</TableHeaderCell>
                 <TableHeaderCell>Category</TableHeaderCell>
+                <TableHeaderCell>Vendor</TableHeaderCell>
                 <SortableHeaderCell
                   direction={directionFor('price')}
                   onSort={() => handleSort('price')}
@@ -140,6 +142,9 @@ export default function ProductsPage() {
                     <code className={styles.sku}>{product.sku}</code>
                   </TableCell>
                   <TableCell>{product.category}</TableCell>
+                  <TableCell>
+                    {vendors.find((v) => v.id === product.vendorId)!.name}
+                  </TableCell>
                   <TableCell>{formatPrice(product.price)}</TableCell>
                   <TableCell>
                     <Badge variant={statusVariant(product.status)}>
