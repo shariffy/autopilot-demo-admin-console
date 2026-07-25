@@ -2,20 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Shell from './components/layout/Shell'
 import UsersPage from './pages/users/UsersPage'
 import UserDetailPage from './pages/users/UserDetailPage'
-
-function ProductsPlaceholder() {
-  return (
-    <p
-      style={{
-        padding: 'var(--space-8)',
-        color: 'var(--color-text-secondary)',
-        fontStyle: 'italic',
-      }}
-    >
-      Products screens coming in the next changeset…
-    </p>
-  )
-}
+import ProductsPage from './pages/products/ProductsPage'
+import ProductDetailPage from './pages/products/ProductDetailPage'
 
 export default function App() {
   return (
@@ -25,8 +13,8 @@ export default function App() {
           <Route path="/" element={<Navigate to="/users" replace />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/users/:id" element={<UserDetailPage />} />
-          <Route path="/products" element={<ProductsPlaceholder />} />
-          <Route path="/products/:id" element={<ProductsPlaceholder />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductDetailPage />} />
         </Routes>
       </Shell>
     </BrowserRouter>
