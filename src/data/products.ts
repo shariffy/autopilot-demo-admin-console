@@ -16,6 +16,7 @@ export const products: Product[] = [
       'The foundational platform layer. Provides account management, billing, ' +
       'and the shared runtime that all other products build on.',
     createdAt: '2022-01-10',
+    vendorId: 'v-internal',
   },
   {
     id: 'p002',
@@ -28,6 +29,7 @@ export const products: Product[] = [
       'Real-time usage dashboards, retention cohorts, and exportable CSV reports ' +
       'for all events captured by Zynthar Core.',
     createdAt: '2022-06-20',
+    vendorId: 'v-northgate',
   },
   {
     id: 'p003',
@@ -40,6 +42,7 @@ export const products: Product[] = [
       'REST and GraphQL endpoints giving third-party services read/write access ' +
       'to Zynthar data under OAuth 2.0.',
     createdAt: '2022-09-05',
+    vendorId: 'v-lucid',
   },
   {
     id: 'p004',
@@ -52,6 +55,7 @@ export const products: Product[] = [
       'Managed ticket queue, SLA tracking, and dedicated account support with ' +
       '48-hour response guarantee.',
     createdAt: '2023-02-14',
+    vendorId: 'v-fernhollow',
   },
   {
     id: 'p005',
@@ -64,6 +68,7 @@ export const products: Product[] = [
       'Bi-directional data sync connector for popular CRM and ERP systems ' +
       'with configurable field mappings and conflict resolution.',
     createdAt: '2023-04-30',
+    vendorId: 'v-internal',
   },
   {
     id: 'p006',
@@ -76,6 +81,7 @@ export const products: Product[] = [
       'Centralised SSO, MFA, and directory sync — currently in internal beta. ' +
       'Pricing not yet finalised.',
     createdAt: '2026-03-01',
+    vendorId: 'v-northgate',
   },
   {
     id: 'p007',
@@ -88,6 +94,7 @@ export const products: Product[] = [
       'Scheduled bulk exports to S3, GCS, or Azure Blob in JSON, CSV, or Parquet ' +
       'format with configurable retention windows.',
     createdAt: '2023-07-18',
+    vendorId: 'v-lucid',
   },
   {
     id: 'p008',
@@ -100,6 +107,7 @@ export const products: Product[] = [
       'Immutable, tamper-evident log of all user and API actions. Queryable ' +
       'via the admin console or the Connect API.',
     createdAt: '2023-09-22',
+    vendorId: 'v-summit',
   },
   {
     id: 'p009',
@@ -112,6 +120,7 @@ export const products: Product[] = [
       'Guided implementation engagement: kickoff call, data migration assistance, ' +
       'and a 30-day post-launch check-in with a solutions engineer.',
     createdAt: '2023-11-01',
+    vendorId: 'v-fernhollow',
   },
   {
     id: 'p010',
@@ -124,6 +133,7 @@ export const products: Product[] = [
       'Configurable outbound webhook dispatcher with retry logic, signature ' +
       'verification, and a delivery log. In private preview.',
     createdAt: '2026-05-10',
+    vendorId: 'v-internal',
   },
   {
     id: 'p011',
@@ -136,6 +146,7 @@ export const products: Product[] = [
       'One-time migration tool for customers moving from the v1 data model. ' +
       'Superseded by the Sync Bridge; no longer sold.',
     createdAt: '2022-03-15',
+    vendorId: 'v-northgate',
   },
   {
     id: 'p012',
@@ -148,6 +159,7 @@ export const products: Product[] = [
       'iOS and Android SDKs exposing Zynthar Core events and identity primitives ' +
       'with offline queue and automatic retry.',
     createdAt: '2024-02-28',
+    vendorId: 'v-lucid',
   },
   {
     id: 'p013',
@@ -160,6 +172,7 @@ export const products: Product[] = [
       'Pixel-perfect PDF and XLSX report generation from Zynthar data with ' +
       'customisable templates and scheduled delivery.',
     createdAt: '2024-04-11',
+    vendorId: 'v-fernhollow',
   },
   {
     id: 'p014',
@@ -172,6 +185,7 @@ export const products: Product[] = [
       'All Platform, Add-on, and Integration products bundled at a discount, ' +
       'plus a dedicated Customer Success Manager and SLA-backed uptime commitment.',
     createdAt: '2024-08-01',
+    vendorId: 'v-internal',
   },
   {
     id: 'p015',
@@ -184,5 +198,6 @@ export const products: Product[] = [
       'Bespoke onsite or remote training sessions for engineering and operations ' +
       'teams, delivered by a Zynthar solutions engineer.',
     createdAt: '2024-10-15',
+    vendorId: 'v-northgate',
   },
 ]

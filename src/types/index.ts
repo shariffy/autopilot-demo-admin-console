@@ -28,4 +28,5 @@ export interface Product {
   status:      ProductStatus
   description: string
   createdAt:   string    // ISO date string YYYY-MM-DD
+  vendorId:    string    // references Vendor.id in ../data/vendors
 }
